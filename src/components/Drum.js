@@ -1,6 +1,6 @@
 import React, {useEffect, useState}from 'react'
 import { useSelector } from 'react-redux'
-const Drum = () => {
+const Drum = ({handleClick}) => {
     let sound = new Audio();
     sound.volume = 0.4;  
     const [buton, setButon] = useState(false)
@@ -74,64 +74,19 @@ const Drum = () => {
                 <div className='drum-main'>
                 <div className='drum-machine'>
                     <div className='row'>
-                        <div className='col' id='Q' onClick={()=>{
-                               if(buton){
-                                sound.src = sounds[0]
-                                return sound.play()
-                            } 
-                        }}>Q</div>
-                        <div className='col' id='W' onClick={()=>{
-                            if(buton){
-                                sound.src = sounds[1]
-                                return sound.play()
-                            }  
-                        }}>W</div>
-                        <div className='col' id='E' onClick={()=>{
-                            if(buton){
-                                sound.src = sounds[2]
-                                return sound.play()
-                            }  
-                        }}>E</div>
+                        <div className='col' id='Q' onClick={()=>{handleClick(0,buton)}}>Q</div>
+                        <div className='col' id='W' onClick={()=>{handleClick(1,buton)}}>W</div>
+                        <div className='col' id='E' onClick={()=>{handleClick(2,buton)}}>E</div>
                     </div>
                     <div className='row'>
-                        <div className='col' id='A' onClick={()=>{
-                            if(buton){
-                                sound.src = sounds[3]
-                                return sound.play()
-                            }  
-                        }}>A</div>
-                        <div className='col' id='S' onClick={()=>{
-                            if(buton){
-                                sound.src = sounds[4]
-                                return sound.play()
-                            }  
-                        }}>S</div>
-                        <div className='col' id='D' onClick={()=>{
-                            if(buton){
-                                sound.src = sounds[5]
-                                return sound.play()
-                            }  
-                        }}>D</div>
+                        <div className='col' id='A' onClick={()=>{handleClick(3,buton)}}>A</div>
+                        <div className='col' id='S' onClick={()=>{handleClick(4,buton)}}>S</div>
+                        <div className='col' id='D' onClick={()=>{handleClick(5,buton)}}>D</div>
                     </div>
                     <div className='row'>
-                        <div className='col' id='Z' onClick={()=>{
-                            if(buton){
-                                sound.src = sounds[6]
-                                return sound.play()
-                            }  
-                        }}>Z</div>
-                        <div className='col' id='X' onClick={()=>{
-                            if(buton){
-                                sound.src = sounds[7]
-                                return sound.play()
-                            }  
-                        }}>X</div>
-                        <div className='col' id='C' onClick={()=>{
-                            if(buton){
-                                sound.src = sounds[8]
-                                return sound.play()
-                            }  
-                        }}>C</div>
+                        <div className='col' id='Z' onClick={()=>{handleClick(6,buton)}}>Z</div>
+                        <div className='col' id='X' onClick={()=>{handleClick(7,buton)}}>X</div>
+                        <div className='col' id='C' onClick={()=>{handleClick(8,buton)}}>C</div>
                     </div>
                 </div>
                 
